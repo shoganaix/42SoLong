@@ -11,7 +11,7 @@ _"And thanks for all the fish!"_
 </p>
 
 <p align="center">
-<img width="194" alt="Captura" src="https://github.com/shoganaix/42Libft/assets/123943292/eebf29e7-3ffc-4307-9029-8dbb2d366f39">
+<img width="194" alt="Captura" src="https://github.com/shoganaix/42PushSwap/assets/123943292/a706aec1-2095-45b3-b583-19fbcaf614c9">
 </p>
 
  
