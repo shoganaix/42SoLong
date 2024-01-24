@@ -6,13 +6,13 @@
 /*   By: msoriano <msoriano@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:24 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/09 15:02:48 by msoriano         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:55:29 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static int	keyboard_w(t_complete *game, int movement)
+static int	keyboard_w(t_game *game, int movement)
 {
 	int	i;
 	int	j;
@@ -30,11 +30,11 @@ static int	keyboard_w(t_complete *game, int movement)
 			return (0);
 		game->map[j + 1][i] = '0';
 	}
-	ft_printf("→ Moves: %i\n°•Items: %i•˚\n", game->counter, game->collectables);
+	ft_printf("→ Moves: %i\nItems: %i\n", game->counter, game->collectables);
 	return (1);
 }
 
-static int	keyboard_s(t_complete *game, int movement)
+static int	keyboard_s(t_game *game, int movement)
 {
 	int	i;
 	int	j;
@@ -52,11 +52,11 @@ static int	keyboard_s(t_complete *game, int movement)
 			return (0);
 		game->map[j - 1][i] = '0';
 	}
-	ft_printf("→ Moves: %i\n°•Items: %i•˚\n", game->counter, game->collectables);
+	ft_printf("→ Moves: %i\nItems: %i\n", game->counter, game->collectables);
 	return (1);
 }
 
-static int	keyboard_a(t_complete *game, int movement)
+static int	keyboard_a(t_game *game, int movement)
 {
 	int	i;
 	int	j;
@@ -75,11 +75,11 @@ static int	keyboard_a(t_complete *game, int movement)
 			return (0);
 		game->map[j][i + 1] = '0';
 	}
-	ft_printf("→ Moves: %i\n°•Items: %i•˚\n", game->counter, game->collectables);
+	ft_printf("→ Moves: %i\nItems: %i\n", game->counter, game->collectables);
 	return (1);
 }
 
-static int	keyboard_d(t_complete *game, int movement)
+static int	keyboard_d(t_game *game, int movement)
 {
 	int	i;
 	int	j;
@@ -97,11 +97,11 @@ static int	keyboard_d(t_complete *game, int movement)
 			return (0);
 		game->map[j][i - 1] = '0';
 	}
-	ft_printf("→ Moves: %i\n°•Items: %i•˚\n", game->counter, game->collectables);
+	ft_printf("→ Moves: %i\nItems: %i\n", game->counter, game->collectables);
 	return (1);
 }
 
-int	controls_working(int command, t_complete *game)
+int	controls_working(int command, t_game *game)
 {
 	int	works;
 

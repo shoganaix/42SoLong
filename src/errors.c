@@ -6,13 +6,13 @@
 /*   By: msoriano <msoriano@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:01 by prossi            #+#    #+#             */
-/*   Updated: 2023/10/19 17:26:21 by msoriano         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:55:48 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static int	horizontalwall(t_complete *game)
+static int	horizontalwall(t_game *game)
 {
 	int	i;
 	int	j;
@@ -28,7 +28,7 @@ static int	horizontalwall(t_complete *game)
 	return (1);
 }
 
-static int	verticalwall(t_complete *game)
+static int	verticalwall(t_game *game)
 {
 	int	height;
 	int	width;
@@ -45,7 +45,7 @@ static int	verticalwall(t_complete *game)
 	return (1);
 }
 
-void	if_walls(t_complete *game)
+void	if_walls(t_game *game)
 {
 	int	verticalwalls;
 	int	horizontalwalls;
@@ -59,7 +59,7 @@ void	if_walls(t_complete *game)
 	}
 }
 
-static void	count_checker(t_complete *game, int height, int width)
+static void	count_checker(t_game *game, int height, int width)
 {
 	if (game->map[height][width] != '1' &&
 		game->map[height][width] != '0' &&
@@ -72,14 +72,14 @@ static void	count_checker(t_complete *game, int height, int width)
 		exit_point(game);
 	}
 	if (game->map[height][width] == 'C')
-			game->columncount++;
+		game->columncount++;
 	if (game->map[height][width] == 'P')
-			game->playercount++;
+		game->playercount++;
 	if (game->map[height][width] == 'E')
-			game->exitcount++;
+		game->exitcount++;
 }
 
-void	character_valid(t_complete *game)
+void	character_valid(t_game *game)
 {
 	int	height;
 	int	width;

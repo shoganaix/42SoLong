@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:37:03 by msoriano          #+#    #+#             */
-/*   Updated: 2023/10/04 16:35:28 by msoriano         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:53:33 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_printf(char const *format, ...)
 		}
 		else
 			result = result + write(1, format, 1);
-	format ++;
+		format ++;
 	}
 	va_end(args);
 	return (result);

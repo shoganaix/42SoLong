@@ -6,16 +6,17 @@
 /*   By: msoriano <msoriano@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:49:02 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/09 19:05:11 by msoriano         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:56:36 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	check_errors(t_complete *game)
+void	check_errors(t_game *game)
 {
 	if_walls(game);
 	character_valid(game);
+	copy_map(game);
 }
 
 static void	*ft_memset(void *b, int c, size_t length)
@@ -28,7 +29,7 @@ static void	*ft_memset(void *b, int c, size_t length)
 	return (b);
 }
 
-int	exit_point(t_complete *game)
+int	exit_point(t_game *game)
 {
 	int	line;
 
@@ -54,14 +55,14 @@ static bool	is_ber_file(const char *argv)
 
 int	main(int argc, char **argv)
 {
-	t_complete	game;
+	t_game	game;
 
 	if (argc != 2 || !(is_ber_file(argv[1])))
 	{
 		ft_printf("Error!\nArguments or file issue\n");
 		return (0);
 	}
-	ft_memset(&game, 0, sizeof(t_complete));
+	ft_memset(&game, 0, sizeof(t_game));
 	if (!map_reading(&game, argv))
 		return (0);
 	check_errors(&game);

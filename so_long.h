@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 20:15:54 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/09 19:05:23 by msoriano         ###   ########.fr       */
+/*   Updated: 2024/01/24 18:29:59 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ typedef struct t_start
 	int		counter;
 	int		collectables;
 
+	char	**map_copy;
+
 	char	**map;
-	//char	**map_copy;
 	void	*floor;
 	void	*barrier;
 	void	*player;
@@ -46,22 +47,24 @@ typedef struct t_start
 	void	*mlxpointer;
 	void	*winpointer;
 
-}	t_complete;
+}	t_game;
 
-int		exit_point(t_complete *game);
-int		map_reading(t_complete *game, char **argv);
-int		controls_working(int command, t_complete *game);
-void	adding_in_graphics(t_complete *game);
-void	place_graphics(t_complete *game, int width, int height);
-int		place_images_in_game(t_complete *game);
-void	if_walls(t_complete *game);
-void	character_valid(t_complete *game);
-void	check_errors(t_complete *game);
-int		right_move(t_complete *game, int i, int j);
+int		exit_point(t_game *game);
+int		map_reading(t_game *game, char **argv);
+int		controls_working(int command, t_game *game);
+void	adding_in_graphics(t_game *game);
+void	place_graphics(t_game *game, int width, int height);
+int		place_images_in_game(t_game *game);
+void	if_walls(t_game *game);
+void	character_valid(t_game *game);
+void	check_errors(t_game *game);
+int		right_move(t_game *game, int i, int j);
 int		width_of_map(char *string);
-int		check_valid_width(t_complete *game);
+int		check_valid_width(t_game *game);
 
-//void	check_exit(t_complete *game, int x, int y);
-//void	check_items(t_complete *game, int x, int y);
+void	copy_map(t_game *game);
+void	check_exit_accesible(t_game *game, int i, int j);
+void	check_e_c(t_game *game);
+void	fkinnorminette(t_game *game, int p, int p2);
 
 #endif

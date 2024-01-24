@@ -6,13 +6,13 @@
 /*   By: msoriano <msoriano@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 19:06:51 by prossi            #+#    #+#             */
-/*   Updated: 2023/11/09 19:03:22 by msoriano         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:35:37 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	place_player(t_complete *game, int height, int width)
+void	place_player(t_game *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 		game->winpointer, game->player, width * 64, height * 64);
@@ -20,14 +20,14 @@ void	place_player(t_complete *game, int height, int width)
 	game->x_axis = width;
 }
 
-void	place_collectable(t_complete *game, int height, int width)
+void	place_collectable(t_game *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 		game->winpointer, game->collectable, width * 64, height * 64);
 	game->collectables++;
 }
 
-int	place_images_in_game(t_complete *game)
+int	place_images_in_game(t_game *game)
 {
 	int	i;
 	int	j;
@@ -55,7 +55,7 @@ int	place_images_in_game(t_complete *game)
 	return (1);
 }
 
-void	adding_in_graphics(t_complete *game)
+void	adding_in_graphics(t_game *game)
 {
 	int	height;
 	int	width;
@@ -66,7 +66,7 @@ void	adding_in_graphics(t_complete *game)
 	place_graphics(game, width, height);
 }
 
-void	place_graphics(t_complete *game, int width, int height)
+void	place_graphics(t_game *game, int width, int height)
 {
 	while (height < game->heightmap)
 	{
