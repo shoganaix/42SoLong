@@ -35,7 +35,15 @@ For more informations on the library go to [42Docs](https://harm-smits.github.io
 
 ## Sprites
 > Made with my own graphical assets and animations
-...
+
+![Doorteeth](https://github.com/user-attachments/assets/53e0d121-f6ea-451d-8cc8-597d38184f40)
+![Wall](https://github.com/user-attachments/assets/1f8f1418-5b19-47b9-8dec-406c953716b0)
+![Floor](https://github.com/user-attachments/assets/2a6293cc-4cb1-4844-87cd-41bf71a4199a)
+![Fish](https://github.com/user-attachments/assets/8932e0cf-491a-49f9-8e9c-5235e0351744)
+![Collectablesmall](https://github.com/user-attachments/assets/71ef9e62-2545-46b4-8ede-3ebf72c7f176)
+
+
+![Solongmapfinalexit2](https://github.com/user-attachments/assets/c90c81e9-4648-4925-845a-7cc2a87e5ea8)
 
 ## Grade
 > This project got a **100**/100 in **_42_** school
